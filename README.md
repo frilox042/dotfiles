@@ -2,10 +2,11 @@ Dotfiles
 ---
 Currently :
 * zsh
-Soon :
 * i3
-* i3pystatus
 * dunst
+* X config (Xresources, xinitrc)
+Soon :
+* i3pystatus
 
 ## Quick start
 `git clone https://github.com/frilox042/dotfiles.git ~/dotfiles`
