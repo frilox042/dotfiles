@@ -1,11 +1,13 @@
 Dotfiles
 ---
-Currently :
+For :
 * zsh
 * i3
 * dunst
-* X config (Xresources, xinitrc)
-Soon :
+* rofi
+* urxvt
+
+Todo :
 * i3pystatus
 
 ## Quick start

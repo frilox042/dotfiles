@@ -2,14 +2,70 @@
 rofi.opacity:  90
 rofi.width:    70
 rofi.lines:    10
-rofi.font:     sourcecodepro 12
+rofi.font:     sourcecodepro 18
 rofi.location: 0
 rofi.padding:  7
 
 rofi.color-enabled: true
-rofi.color-window: #222222,#959595
 
 rofi.color-window: #000000, #454545, #414141
 rofi.color-normal: #000000, #ffffff, argb:0323232, argb:57586e75, #eee8d5
 rofi.color-active: argb:0323232, #268bd2, argb:0eee8d5, #1c1c1c, #fdf6e3
 rofi.color-urgent: #000000, #c89493, argb:0323232, #2d2d2d, #fdf6e3
+
+
+! URxvt -- config
+URxvt.saveLines: 65535
+URxvt.scrollBar_right: true
+URxvt.cutchars: "()*,<>[]{}|''"
+
+! --- color ---
+URxvt.background: #002b36
+URxvt.foreground: #657b83
+
+! --- Solarized colors ---
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
+
+! --- fonts ---
+URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting:true
+! Fix font space
+URxvt*letterSpace: -1
+
+! --- perl ext ---
+URxvt.perl-ext-common: default,matcher,tabbed
+
+! --- url ---
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.rend.0: Uline Bold fg5
