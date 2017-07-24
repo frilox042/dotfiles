@@ -58,9 +58,13 @@ URxvt.foreground: #657b83
 *color15: #fdf6e3
 
 ! --- fonts ---
-URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting:true
+URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting:true \
+		xtf:DejaVu Sans Mono \
+		xtf:Noto Emoji \
+		-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+		
 ! Fix font space
-URxvt*letterSpace: -1
+URxvt*letterSpace: 0
 
 ! --- perl ext ---
 URxvt.perl-ext-common: default,matcher,tabbed
