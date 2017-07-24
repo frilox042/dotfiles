@@ -67,7 +67,12 @@ URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting:tr
 URxvt*letterSpace: 0
 
 ! --- perl ext ---
-URxvt.perl-ext-common: default,matcher,tabbed
+URxvt.perl-ext-common: default,matcher,tabbed,selection-to-clipboard,clipboard,keyboard-select
+
+! --- Clipboard ---
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 ! --- url ---
 URxvt.matcher.button: 1
