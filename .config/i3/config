@@ -1,6 +1,7 @@
 ########### Variables
 # Mod
-set $mod Mod1
+# Mod1 | Mod4
+set $mod Mod4
 
 # Naming workspace
 set $workspace1 "1:"
