@@ -43,6 +43,7 @@ workspace_auto_back_and_forth yes
 ########### Command
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Return exec urxvt
+bindsym $mod+f exec firefox
 
 bindsym $mod+p exec i3lock
 bindsym $mod+Shift+q kill
@@ -59,6 +60,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
 ########### Modifier
 floating_modifier $mod
 
