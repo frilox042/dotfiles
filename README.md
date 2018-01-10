@@ -6,8 +6,6 @@ For :
 * dunst
 * rofi
 * urxvt
-
-Todo :
 * i3pystatus
 
 ## Quick start
