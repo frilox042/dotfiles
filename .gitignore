@@ -4,3 +4,7 @@
 .config/pulse
 .config/chromium
 .config/pavucontrol.ini
+.config/Postman
+.config/configstore
+.config/gcloud
+.config/yarn
