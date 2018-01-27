@@ -11,7 +11,7 @@ dir=~/dotfiles                              # dotfiles directory
 olddir=~/dotfiles_old                       # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-files=".zshrc .config .oh-my-zsh .Xresources .xinitrc"
+files=".zshrc .config .oh-my-zsh .Xresources .xinitrc .tmux.conf"
 
 #########
 
