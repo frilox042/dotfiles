@@ -14,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Plugins
-plugins=(git, python)
+plugins=(git, python, tmux)
 
 # Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
