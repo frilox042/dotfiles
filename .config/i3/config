@@ -37,8 +37,10 @@ set $base0F #fcc09e
 font pango:sourcecodepro 12
 
 ########### Config
-focus_follows_mouse no
+focus_follows_mouse yes
 workspace_auto_back_and_forth yes
+focus_on_window_activation urgent
+mouse_warping output
 
 ########### Command
 bindsym $mod+d exec rofi -show run
