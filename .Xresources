@@ -2,9 +2,10 @@
 URxvt.saveLines: 65535
 URxvt.scrollBar_right: true
 URxvt.cutchars: "()*,<>[]{}|''"
+URxvt.depth: 32
 
 ! --- color ---
-URxvt.background: #002b36
+URxvt.background: rgba:0000/0000/0200/c800
 URxvt.foreground: #657b83
 
 ! --- Solarized colors ---
