@@ -50,7 +50,7 @@ URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18, \
 URxvt*letterSpace: 0
 
 ! --- perl ext ---
-URxvt.perl-ext-common: default,matcher,tabbed,selection-to-clipboard,clipboard,keyboard-select
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard,keyboard-select
 
 ! --- Clipboard ---
 URxvt.keysym.M-c: perl:clipboard:copy
