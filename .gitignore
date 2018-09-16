@@ -9,6 +9,6 @@
 .config/gcloud
 .config/yarn
 .config/neofetch
-.config/gtk-3.0
+.config/gtk-*
 .config/vlc
 .config/inkscape
