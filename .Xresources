@@ -43,11 +43,9 @@ URxvt.foreground: #657b83
 *color15: #fdf6e3
 
 ! --- fonts ---
-URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting:true \
-		xtf:DejaVu Sans Mono \
-		xtf:Noto Emoji \
-		-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
-
+URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18, \
+            xft:Symbola, \
+            xft:LastResort
 ! Fix font space
 URxvt*letterSpace: 0
 
