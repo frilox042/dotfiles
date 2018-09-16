@@ -160,7 +160,7 @@ for_window [class="URxvt"] border pixel 0
 ########### Exec
 exec feh --bg-scale ~/wallpaper/vim-shortcuts-dark_2560x1600.png
 exec --no-startup-id dunst
-exec --no-startup-id i3-msg 'workspace $workspace2; exec firefox'
+exec firefox
 exec --no-startup-id redshift
 
 ########### Exec_always
