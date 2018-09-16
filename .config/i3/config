@@ -152,6 +152,11 @@ bar {
 ########### Assigned Windows
 #assign <criteria> [→] [workspace] <workspace>
 
+########### Specific Windows style
+for_window [class="mpv"] floating enable, border pixel 0
+for_window [class="Firefox"] border pixel 0 
+for_window [class="URxvt"] border pixel 0 
+
 ########### Exec
 exec feh --bg-scale ~/wallpaper/vim-shortcuts-dark_2560x1600.png
 exec --no-startup-id dunst
