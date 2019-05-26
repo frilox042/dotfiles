@@ -31,10 +31,6 @@ export LANG=fr_FR.UTF-8
 export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
 
-#Term
-export TERM='rxvt-unicode'
-export COLORTERM='rxvt-unicode-256color'
-
 # Alias
 alias diff='diff --color=auto'
 
