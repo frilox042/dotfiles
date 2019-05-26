@@ -44,7 +44,7 @@ mouse_warping output
 
 ########### Command
 bindsym $mod+d exec rofi -show run
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec kitty
 bindsym $mod+f exec firefox
 
 bindsym $mod+p exec i3lock
@@ -56,8 +56,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Shift+Up exec xbacklight -inc 5
 bindsym $mod+Shift+Down exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send 'brightness down'"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
