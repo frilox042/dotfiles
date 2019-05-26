@@ -13,6 +13,13 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+autoload -U up-line-or-beggining-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
 # Plugins
 plugins=(git, python, tmux)
 
