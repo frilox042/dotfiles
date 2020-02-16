@@ -30,4 +30,7 @@ status.register("disk",
 status.register("pulseaudio",
                 format="♪{volume}",)
 
+status.register("xkblayout",
+                layouts=["fr", "us"])
+
 status.run()
