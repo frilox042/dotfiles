@@ -21,7 +21,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Plugins
-plugins=(git, python, tmux)
+plugins=(git python tmux gatsby yarn)
 
 # Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
