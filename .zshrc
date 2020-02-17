@@ -27,7 +27,7 @@ plugins=(git python tmux gatsby yarn)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export LANG=fr_FR.UTF-8
+export LANG="en_US.UTf-8"
 export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
 
