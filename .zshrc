@@ -2,8 +2,12 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Path
+# Adds `~/.local/bin` to $PATH
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# Python
 export PYTHONPATH=$PYTHONPATH
-export PATH=$PATH:$HOME/miniconda3/bin
+# Yarn
+export PATH="$(yarn global bin):$PATH"
 
 # Theme
 ZSH_THEME="agnoster"
@@ -28,7 +32,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export LANG="en_US.UTf-8"
-export EDITOR='vim'
+export EDITOR="vim"
+export TERMINAL="kitty"
+export BROWSER="firefox"
 export ARCHFLAGS="-arch x86_64"
 
 # Alias
