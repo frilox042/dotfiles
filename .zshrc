@@ -13,7 +13,6 @@ export PATH="$(yarn global bin):$PATH"
 ZSH_THEME="agnoster"
 
 # Zsh common configuration
-ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -29,20 +28,14 @@ plugins=(git python tmux gatsby yarn)
 
 # Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
+kitty + complete setup zsh | source /dev/stdin
 
 # User configuration
-export LANG="en_US.UTf-8"
 export EDITOR="vim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export ARCHFLAGS="-arch x86_64"
+export MOZ_ENABLE_WAYLAND=1
 
 # Alias
-alias diff='diff --color=auto'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/frilox/google-cloud-sdk/path.zsh.inc' ]; then source '/home/frilox/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/frilox/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/frilox/google-cloud-sdk/completion.zsh.inc'; fi
-
+alias diff="diff --color=auto"
