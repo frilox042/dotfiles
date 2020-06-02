@@ -1,0 +1,122 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "width": 1920,
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    // "modules-center": ["sway/window"],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "temperature",
+        "disk",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "custom/battery_power_consumption",
+        "clock",
+        "tray"
+    ],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/window": {
+        "max-length": 160
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "America/Montreal",
+        "tooltip-format": "<big>{:%C%y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%a %d %b %H:%M}"
+    },
+    "cpu": {
+        "format": "  {usage}%"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "🖴 {used}/{total} [{free}]",
+        "path": "/"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["🌡️", "🌡️", "🌡️"]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": " {icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}% {time}",
+        "format-time": "{H}:{M}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/battery_power_consumption": {
+        "format": " {}",
+        "return-type": "json",
+        "escape": true,
+        "tooltip": false,
+        "interval": 5,
+        "exec": "$HOME/.config/waybar/modules/battery_power_consumption.sh"
+    }
+}

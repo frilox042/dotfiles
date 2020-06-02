@@ -7,6 +7,20 @@ status = Status()  # pylint: disable=I0011,C0103
 status.register("clock",
                 format="%a %-d %b %X",)
 
+status.register(
+    'battery',
+    interval=5,
+    format='{percentage_design:.0f}% {consumption:.0f}W {remaining}',
+    alert=True,
+    alert_percentage=15,
+    status={
+        'DPL': 'DPL',
+        'CHR': 'CHR',
+        'DIS': 'DIS',
+        'FULL': '',
+    }
+)
+
 status.register("mem",
                 format="{avail_mem}",)
 
