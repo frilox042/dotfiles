@@ -1,0 +1,89 @@
+####################################################################
+## Antigen
+####################################################################
+
+####################################################################
+# Load oh-my-zsh
+####################################################################
+
+antigen use oh-my-zsh
+
+####################################################################
+# Load Antigen Bundles
+####################################################################
+
+antigen bundles <<EOBUNDLES
+    alias-finder
+    bobsoppe/zsh-ssh-agent
+    colored-man-pages
+    colorize
+    command-not-found
+    common-aliases
+    compleat
+    cp
+    dirhistory
+    djui/alias-tips
+    extract
+    fzf
+    history
+    lashoun/slugify
+    MichaelAquilina/zsh-auto-notify
+    MichaelAquilina/zsh-you-should-use
+    nmap
+    peterhurford/up.zsh
+    rsync
+    sudo
+    supercrabtree/k
+    systemadmin
+    systemd
+    unixorn/autoupdate-antigen.zshplugin
+    web-search
+    z
+    zsh-navigation-tools
+EOBUNDLES
+
+antigen bundles <<EODEVBUNDLES
+    cargo
+    docker
+    emoji
+    gatsby
+    git
+    git-extras
+    greymd/docker-zsh-completion
+    lukechilds/zsh-better-npm-completion
+    lukechilds/zsh-nvm
+    npm
+    pip
+    python
+    seletskiy/zsh-git-smart-commands
+    srijanshetty/zsh-pip-completion
+    rust
+    rustup
+    tmux
+    vscode
+    wfxr/forgit
+    yarn
+EODEVBUNDLES
+
+# zaw Antigen bundles need to be loaded after the others
+
+antigen bundle willghatch/zsh-cdr
+antigen bundle zsh-users/zaw
+antigen bundle termoshtt/zaw-systemd
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down up-line-or-beginning-search down-line-or-beginning-search)
+
+####################################################################
+# Load theme & Apply Antigen
+####################################################################
+
+# Load theme
+antigen theme romkatv/powerlevel10k
+
+# Let's go Antigen
+antigen apply

@@ -1,3 +1,4 @@
+.config/archey3.cfg
 .config/antigen/antigenrc.zwc
 .config/Atom
 .config/autostart
@@ -22,6 +23,7 @@
 .config/font-manager
 .config/fontforge
 .config/freerdp
+.config/gatsby
 .config/gcloud
 .config/gconf
 .config/gedit
@@ -34,6 +36,7 @@
 .config/lutris
 .config/menus
 .config/Microsoft
+.config/nautilus
 .config/neofetch
 .config/nvm
 .config/pavucontrol.ini
@@ -45,9 +48,11 @@
 .config/Slack
 .config/sourcery
 .config/teams
+.config/Thunar
 .config/Trolltech.conf
 .config/VirtualBox
 .config/vlc
+.config/xfce4
 .config/yarn
 .config/zettlr
 .config/znt
