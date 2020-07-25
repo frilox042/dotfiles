@@ -11,7 +11,7 @@ dir=~/dotfiles                              # dotfiles directory
 olddir=~/dotfiles_old                       # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-files=".zshrc .config .oh-my-zsh .Xresources .xinitrc .tmux.conf"
+files=".config .oh-my-zsh .xinitrc"
 
 #########
 
@@ -33,4 +33,3 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
-

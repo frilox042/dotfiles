@@ -4,40 +4,6 @@
 # set -e
 # set -x
 
-# Default programs:
-export EDITOR="vim"
-export TERMINAL="kitty"
-export BROWSER="firefox"
-export READER="zathura"
-
-# ~/ Clean-up:
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
-export NVM_DIR="$HOME/.config/nvm"
-
-# Other program settings:
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export ARCHFLAGS="-arch x86_64"
-export MOZ_ENABLE_WAYLAND=1
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
-
-
-# Path
-# Adds `~/.local/bin` to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-# Python
-export PYTHONPATH=$PYTHONPATH
-# Yarn
-export PATH="$(yarn global bin):$PATH"
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -94,4 +60,4 @@ if [ -e /home/frilox/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
