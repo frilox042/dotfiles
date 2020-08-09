@@ -37,6 +37,7 @@ window#waybar {
 
 #clock,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #backlight,
@@ -87,6 +88,10 @@ window#waybar {
 
 #backlight {
     border-top: 3px solid turquoise;
+}
+
+#bluetooth {
+    border-top: 3px solid blueviolet;
 }
 
 #pulseaudio {
