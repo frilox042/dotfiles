@@ -20,6 +20,7 @@
 .config/enchant
 .config/eog
 .config/evolution
+.config/fcitx
 .config/font-manager
 .config/fontforge
 .config/freerdp
