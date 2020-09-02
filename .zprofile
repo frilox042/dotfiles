@@ -40,7 +40,6 @@ export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/.z"
 
-
 # Path
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
@@ -49,5 +48,6 @@ export PATH="$(yarn global bin):$PATH"
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
+    mkdir -p "${XDG_DATA_HOME}/sway"
+    exec sway > "${XDG_DATA_HOME}/sway/sway.log"
 fi
