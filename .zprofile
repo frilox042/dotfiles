@@ -5,6 +5,8 @@ export BROWSER="firefox"
 export READER="zathura"
 
 # ~/ Clean-up:
+export XDG_SESSION_TYPE="wayland"
+export XDG_CURRENT_DESKTOP="sway"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -38,16 +40,17 @@ export ARCHFLAGS="-arch x86_64"
 export MOZ_ENABLE_WAYLAND=1
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
+export WINIT_UNIX_BACKEND="x11"
 export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/.z"
 
 # Path
 # Adds `~/.local/bin` to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 # Yarn
 export PATH="$(yarn global bin):$PATH"
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
     mkdir -p "${XDG_DATA_HOME}/sway"
-    exec sway > "${XDG_DATA_HOME}/sway/sway.log"
+    exec sway -d > "${XDG_DATA_HOME}/sway/sway.log" 2>&1
 fi

@@ -14,7 +14,6 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
     alias-finder
-    bobsoppe/zsh-ssh-agent
     colored-man-pages
     colorize
     command-not-found

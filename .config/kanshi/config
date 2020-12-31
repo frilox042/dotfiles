@@ -1,0 +1,4 @@
+profile {
+  output HDMI-A-4 enable position 1920,0
+  output HDMI-A-5 enable position 0,0
+}

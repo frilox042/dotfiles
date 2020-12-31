@@ -34,7 +34,7 @@ antigen init $HOME/.config/antigen/antigenrc
 #   * ~/.zsh/config.d/post
 #
 # In this exact order, and per directory each .zsh file in alphabetical order.
-_dir_aliasd=$XDG_CONFIG_HOME/zsh/config.d
+_dir_aliasd=$XDG_CONFIG_HOME/zsh/alias.d
 _dir_configd=$XDG_CONFIG_HOME/zsh/config.d
 
 for _dir in $_dir_aliasd $_dir_configd/pre $_dir_configd $_dir_configd/post; do

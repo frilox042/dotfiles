@@ -19,7 +19,7 @@
         "cpu",
         "memory",
         "battery",
-        "custom/battery_power_consumption",
+        // "custom/battery_power_consumption",
         "clock",
         "tray"
     ],
@@ -29,7 +29,7 @@
         "all-outputs": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "",
+            "1": "",
             "2": "",
             "3": "3",
             "4": "4",
@@ -72,7 +72,7 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",
