@@ -42,6 +42,7 @@ export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export WINIT_UNIX_BACKEND="x11"
 export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/.z"
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # Path
 # Adds `~/.local/bin` to $PATH
@@ -49,8 +50,12 @@ export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 # Yarn
 export PATH="$(yarn global bin):$PATH"
 
+export $(systemctl --user show-environment)
+
 # If running from tty1 start sway
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [[ -z $DISPLAY && "$TTY" == "/dev/tty1" && "$SWAY_RAN" != 1  ]]; then
     mkdir -p "${XDG_DATA_HOME}/sway"
     exec sway -d > "${XDG_DATA_HOME}/sway/sway.log" 2>&1
+    export SWAY_RAN = 1
 fi
+

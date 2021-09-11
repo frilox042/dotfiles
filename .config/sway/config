@@ -1,4 +1,6 @@
 
+include /etc/sway/config.d/*
+
 include ./sway.d/10_general.conf
 include ./sway.d/20_input.conf
 include ./sway.d/30_output.conf
@@ -6,3 +8,5 @@ include ./sway.d/40_workspace.conf
 include ./sway.d/50_appearance.conf
 include ./sway.d/60_hotkeys.conf
 include ./sway.d/90_autostart.conf
+
+

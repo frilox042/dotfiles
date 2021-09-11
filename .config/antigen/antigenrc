@@ -18,7 +18,6 @@ antigen bundles <<EOBUNDLES
     colorize
     command-not-found
     common-aliases
-    compleat
     cp
     dirhistory
     djui/alias-tips
@@ -74,8 +73,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
-
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down up-line-or-beginning-search down-line-or-beginning-search)
 
 ####################################################################
 # Load theme & Apply Antigen

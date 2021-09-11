@@ -20,6 +20,7 @@ text/x-shellscript=text.desktop;
 text/plain=text.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 application/x-bittorrent=torrent.desktop;
-application/rss+xml=rss.desktop
-inode/directory=file.desktop
+application/rss+xml=rss.desktop;
+inode/directory=file.desktop;
+image/tiff=imv.desktop;
 

@@ -59,5 +59,8 @@ if [ -e /home/frilox/.nix-profile/etc/profile.d/nix.sh ]; then
     source /home/frilox/.nix-profile/etc/profile.d/nix.sh;
 fi
 
+[[ ! -f "/opt/google-cloud-sdk/completion.zsh.inc" ]] || source "/opt/google-cloud-sdk/completion.zsh.inc"
+[[ ! -f "/opt/google-cloud-sdk/path.zsh.inc" ]] || source "/opt/google-cloud-sdk/path.zsh.inc"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
