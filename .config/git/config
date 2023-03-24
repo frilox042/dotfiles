@@ -1,7 +1,7 @@
 [user]
 	email = damiengether@gmail.com
 	name = Damien Gether
-	signingkey = D1E347E45165E0A9
+	signingkey = 809B0DD3099542BEADA7A8A13322796F68503B08
 [pull]
 	rebase = true
 	ff = only

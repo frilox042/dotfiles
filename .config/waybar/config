@@ -4,16 +4,21 @@
     "height": 32,
     "width": 1920,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": [
-      // "sway/window"
-      "network#speed",
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "custom/media",
     ],
     "modules-right": [
         "custom/progres",
-        "custom/systemd",
-        "custom/updates",
+        "network#speed",
+        "custom/scratchpad_indicator",
         "bluetooth",
+        "custom/headset_battery",
+        "custom/systemd",
+        "custom/recording",
+        "custom/updates",
+        "custom/dnd",
         "pulseaudio",
         "backlight",
         "temperature",
@@ -51,6 +56,9 @@
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/language": {
+        "format": "<span foreground='#928374'></span> {short} {shortDescription}"
     },
     "tray": {
         // "icon-size": 21,
@@ -138,8 +146,9 @@
         "exec-if" : "systemctl is-active --quiet vpn"
     },
     "network#speed": {
-        "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
-        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+        "interface": "wlan0",
+        "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets:>8} <span foreground='#929292'></span> {bandwidthUpOctets:>8}",
+        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets:>8} <span foreground='#929292'></span> {bandwidthUpOctets:>8}",
         "interval": 1
     },
     "custom/systemd": {
@@ -158,6 +167,32 @@
         "signal": 1,
         "on-click-right": "waybar-updates refresh",
         "interval": "once"
+    },
+    "custom/dnd": {
+        "exec": "waybar-dnd",
+        "return-type": "json",
+        "signal": 2,
+        "interval": "once",
+        "on-click": "waybar-dnd toggle"
+    },
+    "custom/recording": {
+        "exec": "waybar-recording",
+        "return-type": "json",
+        "signal": 3,
+        "interval": "once"
+    },
+    "custom/scratchpad_indicator": {
+        "format-text": "{}",
+        "return-type": "json",
+        "interval": 5,
+        "exec": "waybar-scratchpad-indicator",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
+    },
+    "custom/headset_battery": {
+        "format-text": "<span foreground='#929292'>ﱊ</span>{}",
+        "interval": 60,
+        "exec": "headsetcontrol -b | sed -n 2p | sed \"s/Battery: //\""
     }
 }
 

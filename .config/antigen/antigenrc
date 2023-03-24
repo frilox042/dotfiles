@@ -41,7 +41,6 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 
 antigen bundles <<EODEVBUNDLES
-    cargo
     docker
     emoji
     gatsby
@@ -56,7 +55,6 @@ antigen bundles <<EODEVBUNDLES
     seletskiy/zsh-git-smart-commands
     srijanshetty/zsh-pip-completion
     rust
-    rustup
     tmux
     vscode
     wfxr/forgit

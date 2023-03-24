@@ -1,21 +1,32 @@
+@define-color background rgba(0, 0, 0, 0.6);
+@define-color foreground white;
+@define-color focused    rgba(255, 255, 255, 0.15);
+@define-color blue       #268bd2;
+@define-color yellow     #fabd2f;
+@define-color red        #fb4934;
+@define-color green      #b8bb26;
+
+
 * {
     padding: 0;
     margin: 0;
     border: none;
     border-radius: 0;
-    font-family: "DejaVu Sans Mono", Roboto, sans-serif, "FontAwesome 5 Free Solid";
+    font-family: "DejaVu Sans Mono", Roboto, sans-serif, "FontAwesome 6 Free Solid";
     font-size: 13px;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
+    background: @background;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
 #workspaces button {
-    padding: 0 9px;
+    padding: 0 10px;
     background: transparent;
-    color: white;
+    color: @foreground;
     border-top: 3px solid transparent;
 }
 
@@ -26,91 +37,50 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    background: rgba(255, 255, 255, 0.15);
-    border-top: 3px solid #268bd2;
+    background: @focused;
+    border-top: 3px solid @blue;
+}
+
+#workspaces button.urgent {
+    color: @red;
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
+    background-color: @backgroup;
+    border-top: 2px solid @background;
 }
 
 #clock,
+#language,
 #battery,
 #bluetooth,
 #cpu,
 #memory,
 #backlight,
 #network,
+#network.speed,
 #pulseaudio,
 #tray,
 #mode,
 #disk,
 #temperature,
-#custom-battery_power_consumption
+#custom-headset_battery,
+#custom-battery_power_consumption,
+#custom-recording,
+#custom-updates,
+#custom-dnd,
+#custom-progress
 {
     padding: 0 5px;
     margin: 0 3px;
     border-top: 3px solid transparent;
 }
 
+#network.speed {
+    margin-right: 20px;
+}
+
 #tray {
     border-top: 3px solid transparent;
 }
 
-#pulseaudio {
-    border-top: 3px solid #cb4b16;
-}
-
-#clock {
-    border-top: 3px solid #6c71c4;
-}
-
-#cpu {
-    border-top: 3px solid #859900;
-}
-
-#memory {
-    border-top: 3px solid #268bd2;
-}
-
-#disk {
-    border-top: 3px solid yellowgreen;
-}
-
-#network {
-    border-top: 3px solid wheat;
-}
-
-#temperature {
-    border-top: 3px solid violet;
-}
-
-#backlight {
-    border-top: 3px solid turquoise;
-}
-
-#bluetooth {
-    border-top: 3px solid blueviolet;
-}
-
-#pulseaudio {
-    color: white;
-}
-
-#pulseaudio.muted {
-    color: red;
-}
-
-#battery,
-#custom-battery_power_consumption {
-    border-top: 3px solid yellow;
-}
-#battery {
-    padding-right: 0;
-    margin-right: 0;
-}
-#custom-battery_power_consumption {
-    padding-left: 0;
-    margin-left: 0;
-}

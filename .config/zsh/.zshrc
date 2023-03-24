@@ -18,13 +18,11 @@ if [ -z $ZSH_CACHE_DIR ]; then
     ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
 fi
 
-# Load oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
 # Load antigen
+export ADOTDIR=${XDG_DATA_HOME}/antigen
 source $HOME/.config/antigen/antigen.zsh
 antigen init $HOME/.config/antigen/antigenrc
+
 
 # Load .zsh files present in
 #
@@ -52,9 +50,6 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-kitty + complete setup zsh | source /dev/stdin
-
-
 if [ -e /home/frilox/.nix-profile/etc/profile.d/nix.sh ]; then
     source /home/frilox/.nix-profile/etc/profile.d/nix.sh;
 fi
@@ -62,5 +57,10 @@ fi
 [[ ! -f "/opt/google-cloud-sdk/completion.zsh.inc" ]] || source "/opt/google-cloud-sdk/completion.zsh.inc"
 [[ ! -f "/opt/google-cloud-sdk/path.zsh.inc" ]] || source "/opt/google-cloud-sdk/path.zsh.inc"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
+# Configure pyenv
+export PYENV_ROOT="${XDG_DATA_HOME}/.pyenv"
+command -v pyenv >/dev/null || export PATH="${PYENV_ROOT}/bin:${PATH}"
+eval "$(pyenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
