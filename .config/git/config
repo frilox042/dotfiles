@@ -1,7 +1,7 @@
 [user]
 	email = damiengether@gmail.com
 	name = Damien Gether
-	signingkey = 809B0DD3099542BEADA7A8A13322796F68503B08
+	signingkey = 41459B04373FBF3EB986E1F058C565CD2CB34AA5
 [pull]
 	rebase = true
 	ff = only
@@ -13,6 +13,15 @@
 	gpgsign = true
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+[diff]
+	tool = difftastic
+	algorithm = histogram
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -27,3 +36,26 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[rerere]
+	enabled = true
+	autoupdate = true
+[merge]
+	conflictstyle = zdiff3
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true

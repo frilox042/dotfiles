@@ -2,9 +2,9 @@
 ## History file configuration
 ####################################################################
 
-[ -z "$HISTFILE" ] && HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
-HISTSIZE=50000
-SAVEHIST=10000
+[ -z "$HISTFILE" ] && export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+export HISTSIZE=50000
+export SAVEHIST=10000
 
 ## History command configuration
 setopt EXTENDED_HISTORY       # record timestamp of command in HISTFILE

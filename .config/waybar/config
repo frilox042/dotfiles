@@ -12,13 +12,13 @@
     "modules-right": [
         "custom/progres",
         "network#speed",
-        "custom/scratchpad_indicator",
+        "sway/scratchpad",
         "bluetooth",
         "custom/headset_battery",
         "custom/systemd",
         "custom/recording",
         "custom/updates",
-        "custom/dnd",
+        "custom/notification",
         "pulseaudio",
         "backlight",
         "temperature",
@@ -181,18 +181,39 @@
         "signal": 3,
         "interval": "once"
     },
-    "custom/scratchpad_indicator": {
-        "format-text": "{}",
-        "return-type": "json",
-        "interval": 5,
-        "exec": "waybar-scratchpad-indicator",
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}",
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "custom/headset_battery": {
         "format-text": "<span foreground='#929292'>ﱊ</span>{}",
         "interval": 60,
-        "exec": "headsetcontrol -b | sed -n 2p | sed \"s/Battery: //\""
+        "exec": "headsetcontrol -b | sed -n 5p | sed \"s/Level: //\" | awk '{$1=$1;print}'"
     }
 }
 

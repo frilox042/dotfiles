@@ -55,6 +55,6 @@ export $(systemctl --user show-environment)
 # If running from tty1 start sway
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     mkdir -p "${XDG_DATA_HOME}/sway"
-    exec sway -d > "${XDG_DATA_HOME}/sway/sway.log" 2>&1
+    exec sway --unsupported-gpu -d > "${XDG_DATA_HOME}/sway/sway.log" 2>&1
 fi
 

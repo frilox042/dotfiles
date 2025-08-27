@@ -69,11 +69,16 @@ window#waybar {
 #custom-recording,
 #custom-updates,
 #custom-dnd,
-#custom-progress
+#custom-progress,
+#custom-notification
 {
     padding: 0 5px;
     margin: 0 3px;
     border-top: 3px solid transparent;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
 }
 
 #network.speed {

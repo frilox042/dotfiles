@@ -54,6 +54,7 @@ if [ -e /home/frilox/.nix-profile/etc/profile.d/nix.sh ]; then
     source /home/frilox/.nix-profile/etc/profile.d/nix.sh;
 fi
 
+[[ ! -f "/etc/profile.d/google-cloud-cli.sh" ]] || source "/etc/profile.d/google-cloud-cli.sh"
 [[ ! -f "/opt/google-cloud-sdk/completion.zsh.inc" ]] || source "/opt/google-cloud-sdk/completion.zsh.inc"
 [[ ! -f "/opt/google-cloud-sdk/path.zsh.inc" ]] || source "/opt/google-cloud-sdk/path.zsh.inc"
 
